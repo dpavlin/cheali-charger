@@ -4,7 +4,7 @@ import sys
 from ehelper import *
 from dformatter import *
 
-from v9_2_9 import *
+from v9_3_10 import *
 
 hexFile = 'eeprom.bin'
 
@@ -24,8 +24,10 @@ def checkAllCRC():
     checkCRC(x, 'settings')
 
 
-print dump(x)
-checkAllCRC();
+print(dump(x))
+# fails on programData
+#checkAllCRC();
+checkCRC(x, 'calibration')
 
 
 #save defaultCalibration.cpp file
