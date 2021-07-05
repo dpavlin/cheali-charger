@@ -12,7 +12,7 @@ if len(sys.argv) > 1:
     hexFile = sys.argv[1]
 
 x = Data()
-f = open(hexFile, 'r')
+f = open(hexFile, 'rb')
 f.readinto(x)
 
 

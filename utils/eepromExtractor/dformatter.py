@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from _string import formatter_field_name_split
 from string import Formatter
 
 class DFormatter(Formatter):
@@ -7,7 +8,7 @@ class DFormatter(Formatter):
          return getattr(kwargs, field_name)
 
      def get_field(self, field_name, args, kwargs):
-         first, rest = field_name._formatter_field_name_split() 
+         first, rest = formatter_field_name_split(field_name) 
          obj = self.get_value(first, args, kwargs) 
 
          for is_attr, i in rest:

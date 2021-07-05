@@ -27,18 +27,18 @@ def dump(s, tabs = 0, tab= '    '):
 
 def checkHeader(d):
     s = ''.join([chr(x) for x in  d.magicString])
-    print 'magic: ', s
+    print('magic: ', s)
     return s == 'chli'
 
 def error(s):
-    print s
+    print(s)
     sys.exit()
 
 def checkVersion(d, str_version):
     if not checkHeader(d):
         error('checkHeader error!')
     v =  '' + str(d.calibrationVersion) + '.'  + str(d.programDataVersion) + '.' + str(d. settingVersion)
-    print 'version:', v
+    print('version:', v)
     if str_version != v:
         error('checkVersion: ' + v +' != ' + str_version)
 
